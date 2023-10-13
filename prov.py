@@ -8,11 +8,12 @@ parallellsum = 0
 
 res = input("Ange resistorer: ").split()
 
-for i in range(0,len(res)):
-    serie_sum += int(res[i])
-    parallellsum += pow(int(res[i]), -1)
+if len(res) > 0 and int(res[0]) > 0:
+    for i in range(0,len(res)):
+        serie_sum += int(res[i])
+        parallellsum += pow(int(res[i]), -1)
 
-parallellsum = pow(parallellsum, -1)
+    parallellsum = pow(parallellsum, -1)
 
 print(f"Serieresistans: {serie_sum}")
 print(f"Parallellresistans: {parallellsum}")
